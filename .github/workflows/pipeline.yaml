@@ -8,6 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
+          ls -a
           npm install
           npm start
 

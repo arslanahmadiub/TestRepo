@@ -1,28 +1,24 @@
+const simpleGit = require('simple-git');
+const git = simpleGit();
 
-console.log("I am here")
+// Define the file path and branch names
+const filePath = 'test';
+const masterBranch = 'master';
+const featureBranch = 'compare-branch';
 
-const fs = require('fs');
-const { execSync } = require('child_process');
+// Get the content of the file in master branch
+git.show([`${masterBranch}:${filePath}`], (err, masterContent) => {
+  if (err) throw err;
 
-// Get the paths to the feature and main branch files from command-line arguments
-    const featurePath = process.argv[2];
-    const mainPath = process.argv[3];
-    const processArg = process.argv;
-    const processAr = process;
+  // Get the content of the file in feature branch
+  git.show([`${featureBranch}:${filePath}`], (err, featureContent) => {
+    if (err) throw err;
 
-// Get the contents of the files in the feature and main branches
-// const featureFileContents = fs.readFileSync(featurePath, 'utf-8');
-// const mainFileContents = execSync(`git show main:${mainPath}`).toString('utf-8');
-
-
-console.log("processArg",processArg)
-console.log("processAr",processAr)
-
-
-// Compare the contents of the files
-// if (featureFileContents === mainFileContents) {
-//   console.log('The files in the feature and main branches have the same contents.');
-// } else {
-//   console.log('The files in the feature and main branches have different contents.');
-// }
-// git push https://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@github.com/arslanahmadiub/TestRepo.git
+    // Compare the content of the two files
+    if (masterContent === featureContent) {
+      console.log('The file content is the same in both branches.');
+    } else {
+      console.log('The file content is different in the two branches.');
+    }
+  });
+});

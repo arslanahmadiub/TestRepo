@@ -2,7 +2,7 @@ const simpleGit = require('simple-git');
 const git = simpleGit();
 
 // Define the file path and branch names
-const filePath = '/test.js';
+const filePath = 'test.js';
 const masterBranch = 'master';
 const featureBranch = 'compare-branch';
 
@@ -24,8 +24,10 @@ const featureBranch = 'compare-branch';
 //   });
 // });
 
-git.show([`${featureBranch}:${filePath}`], (err, masterContent) => {
-    if (err) throw err;
-    console.log("masterContent", masterContent)
+console.log('Branch', git.show())
+
+// git.show([`${featureBranch}:${filePath}`], (err, masterContent) => {
+//     if (err) throw err;
+//     console.log("masterContent", masterContent)
   
-  });
+//   });

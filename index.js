@@ -2,7 +2,7 @@ const simpleGit = require('simple-git');
 const git = simpleGit();
 
 // Define the file path and branch names
-const filePath = 'test';
+const filePath = 'test.js';
 const masterBranch = 'master';
 const featureBranch = 'compare-branch';
 

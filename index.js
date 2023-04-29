@@ -9,16 +9,16 @@ const featureBranch = 'compare-branch';
 // Get the content of the file in master branch
 git.show([`${masterBranch}:${filePath}`], (err, masterContent) => {
   if (err) throw err;
-
+    console.log("MasterContent", masterContent)
   // Get the content of the file in feature branch
-  git.show([`${featureBranch}:${filePath}`], (err, featureContent) => {
-    if (err) throw err;
+//   git.show([`${featureBranch}:${filePath}`], (err, featureContent) => {
+//     if (err) throw err;
 
-    // Compare the content of the two files
-    if (masterContent === featureContent) {
-      console.log('The file content is the same in both branches.');
-    } else {
-      console.log('The file content is different in the two branches.');
-    }
-  });
+//     // Compare the content of the two files
+//     if (masterContent === featureContent) {
+//       console.log('The file content is the same in both branches.');
+//     } else {
+//       console.log('The file content is different in the two branches.');
+//     }
+//   });
 });

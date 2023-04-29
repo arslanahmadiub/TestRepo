@@ -5,15 +5,18 @@ const fs = require('fs');
 const { execSync } = require('child_process');
 
 // Get the paths to the feature and main branch files from command-line arguments
-const featurePath = process.argv[2];
-const mainPath = process.argv[3];
+    const featurePath = process.argv[2];
+    const mainPath = process.argv[3];
+    const processArg = process.argv;
+    const processAr = process;
 
 // Get the contents of the files in the feature and main branches
 // const featureFileContents = fs.readFileSync(featurePath, 'utf-8');
 // const mainFileContents = execSync(`git show main:${mainPath}`).toString('utf-8');
 
-console.log("mainPath",mainPath)
-console.log("featurePath",featurePath)
+
+console.log("processArg",processArg)
+console.log("processAr",processAr)
 
 
 // Compare the contents of the files

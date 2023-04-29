@@ -24,7 +24,7 @@ const featureBranch = 'compare-branch';
 //   });
 // });
 
-console.log('Branch', git.show())
+console.log('PrintBranchName', git.show([`${featureBranch}`]))
 
 // git.show([`${featureBranch}:${filePath}`], (err, masterContent) => {
 //     if (err) throw err;

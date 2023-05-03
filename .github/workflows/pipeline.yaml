@@ -10,8 +10,6 @@ jobs:
         with:
           fetch-depth: 0
           ref: ${{ github.ref }}
-      - name: Checkout feature branch
-        run: git checkout feature-branch
       - name: Install dependencies
         run: npm install
       - name: Run script

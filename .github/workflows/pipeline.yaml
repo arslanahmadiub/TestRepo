@@ -11,10 +11,5 @@ jobs:
           fetch-depth: 0
       - name: Install dependencies
         run: npm install
-      - name: Compare files
-        run: |
-          npm install simple-git
-          git fetch origin feature-branch
-          git show origin/master:path/to/file > master-file.txt
-          git show origin/feature-branch:path/to/file > feature-file.txt
-          diff master-file.txt feature-file.txt || echo "Files are different"
+      - name: Run script
+        run: node index.js
